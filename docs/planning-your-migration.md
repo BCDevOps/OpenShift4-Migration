@@ -1,16 +1,20 @@
 # Planning your migration
 
-## Migration Considerations
-
-Check out OpenShift 4
+Get an early look at the new platform technology:
 
 - [docs.openshift.com](https://docs.openshift.com/container-platform/latest/welcome/index.html)
 - [learn.openshift.com](https://learn.openshift.com) for hands on!
 - Add links to more resources:
 
-### Staffing considerations
+## Migration Considerations
+
+As the availability date of the new platform gets closer, preparation and planning can start for the work that will need to be done to migrate applications from the current Pathfinder service to the new Silver platform service.  This new Silver platform service is the next step in the Container Platform service journey for BC Gov, taking what we learned during the Pathfinder journey and using that learning to begin the creation of a broader Enterprise service.  With the creation of the new service, we also begin the process to decommission the current pathfinder platform.  All application services hosted on the Pathfinder platform will need to migration to the new enterprise service to continue their service delivery.
+
+### Staff and timeline considerations
 
 Migrating applications can be an intense activity.  With many moving parts, and lots of details and challenges waiting to surprise you, having a team that understands both your application details as well as your deployment approaches will be a key success factor.  This is an activity that will test and stretch the staff that energize your DevOps roles.
+
+The timeline for the migration will be aggressive, beginning with the help of our most experienced Developer teams in the early Fall, with the goal for completion within X months.
 
 ### Network considerations
 

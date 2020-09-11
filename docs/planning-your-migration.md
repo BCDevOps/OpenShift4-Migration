@@ -16,9 +16,9 @@ Migrating applications can be an intense activity.  With many moving parts, and 
 
 #### Ingress
 
-Whether you already manage an application vanity URL (eg: my-awesome-app.gov.bc.ca) or you currently leverage the pathfinder.gov.bc.ca wildcard (my-justasawesome-app.pathfinder.gov.bc.ca), you will need to plan how people will find your app once it's moved.  With the move to an enterprise service, the platform wildcard has been deemed unsuitable for production application deployments.  This means if you don't have a vanity URL for your application yet, you will want to get started on provisioning one, and if you do, you'll want to plan how to switch the name to the new platform.  (Timed DNS change, external load-balancer, BigIP DNS [iStore reference available?])
+Whether you already manage an application vanity URL (eg: my-awesome-app.gov.bc.ca) or you currently leverage the pathfinder.gov.bc.ca wildcard (my-justasawesome-app.pathfinder.gov.bc.ca), you will need to plan how people will find your app once it's moved.  With the move to an enterprise service, the platform wildcard has been deemed unsuitable for production application deployments.  This means if you don't have a vanity URL for your application yet, you will want to get started on provisioning one.  If you already use a vanity URL, you'll want to plan how to switch the name to the new platform.  (Timed DNS change, external load-balancer, BigIP DNS [iStore reference available?])
 
-For exposing dev and test services, the wildcard ingress will still be available at *.apps.silver.devops.gov.bc.ca
+For exposing tools, dev and test services, the wildcard ingress will still be available at *.apps.silver.devops.gov.bc.ca
 
 #### Egress
 
@@ -26,7 +26,7 @@ Many applications also have dependencies on external (out of cluster) services. 
 
 The new silver (and eventually gold) platforms will use a shared egress IP (or range), and restriction to an individual application by IP address will not be supported.  (this mimics the current pathfinder network model).
 
-Extending secure communication from applications within the cluster to applications in either another cluster, or the existing datacentre networks is a service that is in development.
+Extending secure communication from applications within the cluster to applications in either another cluster, or the existing datacentre networks is in development.
 
 #### Internal namespace
 
@@ -51,5 +51,13 @@ A big improvement for integration into the enterprise backup system can be found
 
 #### Migrating data
 
-Existing persistent data will need to be copied from one cluster to another (see [https://github.com/bcdevops/StorageMigration] repository for a sample tool/approach).
+Existing persistent data will need to be copied from one cluster to another (Sample soon to come to [https://github.com/bcdevops/StorageMigration] repository).
 
+### Build (Docker) considerations
+
+OpenShift 4 now uses podman/buildah instead of docker to build images.  You may encounter differences and irregularities with more complex docker builds.  The following are a couple of great resources for getting started with podman/buildah.
+
+- <https://www.openshift.com/blog/openshift-4-image-builds>
+- <https://developers.redhat.com/blog/2019/02/21/podman-and-buildah-for-docker-users>
+- <https://buildah.io>
+- <https://developers.redhat.com/blog/2019/08/14/best-practices-for-running-buildah-in-a-container/>

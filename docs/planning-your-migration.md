@@ -28,7 +28,7 @@ For exposing tools, dev and test services, the wildcard ingress will still be av
 
 Many applications also have dependencies on external (out of cluster) services.  If access to these services is restricted, external access rules may be required (ie: firewall rules to allow traffic from the silver cluster)
 
-The new silver (and eventually gold) platforms will use a shared egress IP (or range), and restriction to an individual application by IP address will not be supported.  (this mimics the current pathfinder network model).
+The new Silver (and eventually gold) platforms will use a shared egress IP (or range), and restriction to an individual application by IP address will not be supported.  (this mimics the current pathfinder network model).
 
 Extending secure communication from applications within the cluster to applications in either another cluster, or the existing datacentre networks is in development.
 
@@ -36,7 +36,7 @@ Extending secure communication from applications within the cluster to applicati
 
 Zero trust network security (inside the cluster) will require NetworkSecurityPolicy objects to be present in projects and namespaces to allow traffic to flow between Pods/deployments in a namespace.
 
-With the starting stance of Zero Trust, there will no longer be restrictions on inter-namespace communication either.  Both namespaces will need corresponding NetworkSecurityPolicy rules to allow traffic between namespaces.
+With the starting stance of Zero Trust, there will no longer be restrictions on inter-namespace communication either.  Both namespaces will need corresponding NetworkSecurityPolicy rules to allow traffic between namespaces.  Please see [Developer Guide to Zero Trust](https://developer.gov.bc.ca/Platform-Services-Security/Developer-Guide-to-Zero-Trust-Security-Model-on-the-Platform) for a more detailed look.
 
 ### Storage considerations
 
@@ -51,7 +51,7 @@ The key storageClass types will be available (Block/File).  StorageClass names a
 
 #### Enterprise backup integration
 
-A big improvement for integration into the enterprise backup system can be found via a normal persistent volume request for a new storageClass: `netapp-file-backup` (instead of the service catalog provisioning)  Additional documentation on on this new storageClass can be found [at a link to be determined].
+A big improvement for integration into the enterprise backup system can be found via a normal persistent volume request for a new storageClass: `netapp-file-backup` (instead of the service catalog provisioning)  Additional documentation on on this new storageClass can be found here: [OpenShift 4 - Backup and Restore](https://developer.gov.bc.ca/OCP4-Backup-and-Restore).
 
 #### Migrating data
 
